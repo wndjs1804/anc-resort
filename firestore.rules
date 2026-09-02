@@ -1,0 +1,29 @@
+rules_version = '2';
+
+// ANC 리조트 예약현황 — Firestore 보안 규칙 (CLAUDE.md §10)
+//
+// 원칙
+//  - 클라이언트(게시판 iframe 안의 web/)는 읽기만 한다. 쓰기는 전부 봇(Admin SDK)만 한다.
+//    Admin SDK 는 이 규칙을 우회하므로, 여기서는 클라이언트 쓰기를 전부 막으면 된다.
+//  - sessions/ 와 meta/ 는 클라이언트가 읽지도 못한다. (쿠키·토큰이 들어간다)
+//  - 명시하지 않은 컬렉션은 기본적으로 전부 금지된다.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 기본값: 아무것도 허용하지 않는다.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 화면이 읽어야 하는 것들 — 읽기만.
+    match /resorts/{resortId}   { allow read: if true; allow write: if false; }
+    match /nodes/{nodeId}       { allow read: if true; allow write: if false; }
+    match /rooms/{roomId}       { allow read: if true; allow write: if false; }
+    match /snapshots/{docId}    { allow read: if true; allow write: if false; }
+    match /details/{docId}      { allow read: if true; allow write: if false; }
+
+    // sessions/ · meta/ 는 위 기본 규칙에 따라 읽기·쓰기 모두 금지된다.
+    // (규칙을 추가하지 않는 것이 곧 금지다. 실수로 열지 않도록 여기 적어 둔다.)
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "anc-resort-bot",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "explore:sono": "tsx scripts/explore.ts --resort=sono",
+    "seed:sono": "tsx scripts/seed-master.ts",
+    "test:sono": "tsx scripts/test-adapter.ts --resort=sono",
+    "start": "tsx src/server.ts",
+    "dev": "tsx src/server.ts",
+    "sync:images": "tsx scripts/sync-images.ts",
+    "explore": "tsx scripts/explore.ts",
+    "explore:anantti": "tsx scripts/explore.ts --resort=anantti",
+    "seed:anantti": "tsx scripts/seed-anantti.ts",
+    "test:anantti": "tsx scripts/test-adapter.ts --resort=anantti",
+    "explore:hanwha": "tsx scripts/explore.ts --resort=hanwha",
+    "inspect:hanwha": "tsx scripts/inspect-hanwha-step2.ts",
+    "seed:hanwha": "tsx scripts/seed-hanwha.ts",
+    "test:hanwha": "tsx scripts/test-adapter.ts --resort=hanwha"
+  },
+  "dependencies": {
+    "firebase-admin": "^14.3.0",
+    "playwright": "^1.49.0",
+    "tsx": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}

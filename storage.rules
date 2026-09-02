@@ -1,0 +1,14 @@
+rules_version = '2';
+
+// 객실 사진 — 사내 열람용 (CLAUDE.md §10)
+//
+// 규칙으로는 아무도 접근할 수 없게 막는다.
+// 화면은 업로드할 때 발급한 다운로드 토큰이 들어간 주소로만 사진을 읽는다.
+// 그 주소는 추측할 수 없고, 목록을 훑을 수도 없다.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

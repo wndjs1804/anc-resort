@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>휴양시설 이용조회</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- 0. 새 창으로 열렸을 때만 보이는 머리말 -->
+  <header id="pageHead">
+    <h1>휴양시설 이용조회</h1>
+    <p class="muted" id="pageSub" hidden>회사 휴양시설 회원권의 예약가능 여부와 회원가를 확인하는 화면입니다.</p>
+  </header>
+
+  <!-- 1. 조회 조건 -->
+  <div class="bar" id="controls">
+    <span class="picks" id="picks"></span>
+    <label class="pick">
+      <span class="pick-label">박수</span>
+      <select id="nights">
+        <option value="1" selected>1박</option>
+        <option value="2">2박</option>
+      </select>
+    </label>
+    <button id="search" class="primary">조회</button>
+  </div>
+
+  <!-- 2. 상태 줄 -->
+  <div class="status" id="status">불러오는 중…</div>
+
+  <!-- 3~4. 달력 -->
+  <section id="calendarSection" hidden>
+    <div class="month-nav">
+      <button id="prevMonth" class="ghost">‹ 이전</button>
+      <strong id="monthLabel"></strong>
+      <button id="nextMonth" class="ghost">다음 ›</button>
+    </div>
+    <div class="legend" id="legend"></div>
+    <p class="cal-hint muted" id="calHint" hidden></p>
+    <div class="cal-head">
+      <div class="sun">일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div class="sat">토</div>
+    </div>
+    <div class="cal" id="calendar"></div>
+  </section>
+
+  <!-- 5~7. 상세 -->
+  <section id="detailSection" hidden>
+    <div class="detail-head">
+      <div>
+        <strong id="detailTitle"></strong>
+        <span class="muted" id="detailFetched"></span>
+      </div>
+      <button id="refreshDetail" class="ghost">지금 다시 확인</button>
+    </div>
+    <div id="buildings" class="chips" hidden></div>
+    <div id="rooms"></div>
+  </section>
+
+  <div class="foot" id="foot">
+    <p id="footClosing" hidden><b>마감임박</b>도 예약이 가능한 상태입니다. 남은 객실이 적다는 뜻입니다.</p>
+    <p><b>이 화면에서 예약은 되지 않습니다.</b> 숙소 · 동 · 날짜 · 객실 종류를 <b>담당자 김사랑 Pro</b>에게 알려 예약을 요청해 주세요.</p>
+    <p class="muted">금액은 회원가 기준입니다. 표시된 현황은 조회 시점 기준이며 실제 예약 가능 여부는 달라질 수 있습니다.</p>
+  </div>
+</div>
+
+<!-- 사진 확대 -->
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lb-close" id="lbClose" aria-label="닫기">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="이전">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="다음">›</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>

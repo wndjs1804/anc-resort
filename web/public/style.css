@@ -1,0 +1,196 @@
+/* 사내 게시판 안에서 이질감 없게. 흰 배경, 얇은 테두리, 시스템 폰트, 그림자·그라데이션 없음. */
+
+:root {
+  --line: #e0e0e0;
+  --line-strong: #c8c8c8;
+  --text: #1a1a1a;
+  --muted: #767676;
+  --available: #167c3e;
+  --available-bg: #e8f5ed;
+  --closing: #b25000;
+  --closing-bg: #fdf0e3;
+  --waitlist: #1a5fb4;
+  --waitlist-bg: #e8f0fb;
+  --full: #6b6b6b;
+  --full-bg: #f2f2f2;
+  --sun: #c62828;
+  --sat: #1565c0;
+}
+
+* { box-sizing: border-box; }
+
+/* hidden 속성이 항상 이기게 한다.
+   .lightbox 처럼 display 를 지정한 요소는 hidden 이어도 화면을 덮어 클릭을 가로챈다. */
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font: 13px/1.6 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+
+#app { padding: 22px; max-width: 900px; }
+
+.muted { color: var(--muted); }
+
+/* ── 조회 조건 ─────────────────────────────────────────── */
+.bar {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end;
+  padding-bottom: 14px; border-bottom: 1px solid var(--line);
+}
+.picks { display: contents; }
+.pick { display: flex; flex-direction: column; gap: 5px; }
+.pick-label { font-size: 12px; color: var(--muted); }
+select {
+  font: inherit; padding: 8px 12px; border: 1px solid var(--line-strong);
+  border-radius: 3px; background: #fff; color: inherit; min-width: 110px;
+}
+button {
+  font: inherit; padding: 10px 20px; border-radius: 3px; cursor: pointer;
+  border: 1px solid var(--line-strong); background: #fff; color: inherit;
+}
+button.primary { background: #2b2b2b; border-color: #2b2b2b; color: #fff; }
+button.ghost { padding: 7px 14px; font-size: 12px; }
+button:disabled { opacity: .5; cursor: default; }
+
+/* ── 상태 줄 ───────────────────────────────────────────── */
+.status { padding: 12px 0; font-size: 12px; color: var(--muted); }
+.status.error { color: #b3261e; }
+.status.loading::after { content: ""; }
+
+/* ── 달력 ─────────────────────────────────────────────── */
+.month-nav { display: flex; align-items: center; gap: 17px; margin: 8px 0 12px; }
+.month-nav strong { font-size: 14px; flex: 1; text-align: center; }
+
+.legend { display: flex; gap: 17px; font-size: 12px; color: var(--muted); margin-bottom: 8px; flex-wrap: wrap; }
+.legend .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.dot.available { background: var(--available); }
+.dot.closing { background: var(--closing); }
+.dot.waitlist { background: var(--waitlist); }
+.dot.full { background: var(--full); }
+.dot.open { background: var(--waitlist); }
+.dot.unknown { background: #fff; border: 1px dashed var(--line-strong); }
+
+.cal-hint { font-size: 12px; margin: 0 0 8px; }
+
+.cal-head, .cal { display: grid; grid-template-columns: repeat(7, 1fr); }
+.cal-head { font-size: 12px; color: var(--muted); text-align: center; padding-bottom: 6px; }
+.cal-head .sun { color: var(--sun); }
+.cal-head .sat { color: var(--sat); }
+
+.cal { border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.cell {
+  border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  min-height: 78px; padding: 6px; background: #fff; text-align: left;
+  font: inherit; cursor: default; display: flex; flex-direction: column; gap: 5px;
+}
+.cell.empty { background: #fafafa; }
+.cell.pickable { cursor: pointer; }
+.cell.pickable:hover { background: #f5f5f5; }
+.cell .d { font-size: 12px; }
+.cell.sun .d { color: var(--sun); }
+.cell.sat .d { color: var(--sat); }
+.cell.past .d { color: #bbb; }
+.cell.selected { outline: 2px solid #2b2b2b; outline-offset: -2px; }
+.cell.in-stay { background: #f4f7fb; }
+
+.badge {
+  font-size: 11px; padding: 1px 7px; border-radius: 2px; align-self: flex-start;
+  border: 1px solid transparent; white-space: nowrap;
+}
+.badge.available { color: var(--available); background: var(--available-bg); }
+.badge.closing { color: var(--closing); background: var(--closing-bg); }
+.badge.waitlist { color: var(--waitlist); background: var(--waitlist-bg); }
+.badge.full { color: var(--full); background: var(--full-bg); }
+.badge.partial { color: var(--closing); background: var(--closing-bg); }
+.badge.open { color: var(--waitlist); background: var(--waitlist-bg); }
+.badge.unknown { color: var(--muted); border: 1px dashed var(--line-strong); }
+
+/* ── 상세 ─────────────────────────────────────────────── */
+#detailSection { margin-top: 26px; border-top: 1px solid var(--line); padding-top: 17px; }
+.detail-head { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+.detail-head strong { font-size: 14px; margin-right: 12px; }
+.detail-head .muted { font-size: 12px; }
+
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 6px; }
+.chips .chip-label { font-size: 12px; color: var(--muted); align-self: center; margin-right: 2px; }
+.chip {
+  font-size: 12px; padding: 6px 13px; border: 1px solid var(--line-strong);
+  border-radius: 12px; background: #fff; cursor: pointer;
+}
+.chip.on { background: #2b2b2b; border-color: #2b2b2b; color: #fff; cursor: default; }
+
+.group { margin-top: 20px; }
+.group-head {
+  font-size: 12px; font-weight: 600; padding: 8px 0 7px;
+  border-bottom: 1px solid var(--line);
+}
+.group-head .cap { font-weight: 400; color: var(--muted); }
+
+.room { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid #f0f0f0; align-items: flex-start; }
+.thumb {
+  width: 64px; height: 48px; flex: 0 0 64px; border: 1px solid var(--line);
+  border-radius: 3px; object-fit: cover; background: #fafafa; cursor: pointer;
+}
+/* 사진이 없을 때: 아이콘 없이 빈 자리만 둔다 (줄 맞춤 유지) */
+.thumb.none { border: 0; background: transparent; cursor: default; }
+.room-main { flex: 1 1 auto; min-width: 0; }
+.room-name { font-size: 12px; }
+.room-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.room-price { text-align: right; flex: 0 0 auto; min-width: 130px; }
+.price-total { font-weight: 600; }
+.price-lines { font-size: 11px; color: var(--muted); margin-top: 5px; line-height: 1.45; }
+.price-lines .dc { color: var(--closing); }
+
+#pageHead { padding-bottom: 14px; }
+#pageHead h1 { font-size: 14px; margin: 0 0 5px; }
+#pageHead p { margin: 0; font-size: 12px; }
+
+.foot { margin-top: 26px; font-size: 12px; border-top: 1px solid var(--line); padding-top: 14px; }
+.foot p { margin: 0 0 6px; }
+
+/* ── 사진 확대 ─────────────────────────────────────────── */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(0,0,0,.82);
+  display: flex; align-items: center; justify-content: center; z-index: 50;
+}
+.lightbox img { max-width: 92%; max-height: 86%; object-fit: contain; }
+.lb-close, .lb-nav {
+  position: absolute; background: rgba(255,255,255,.9); border: 0;
+  border-radius: 3px; cursor: pointer;
+}
+.lb-close { top: 12px; right: 12px; padding: 8px 14px; font-size: 14px; }
+.lb-nav { top: 50%; transform: translateY(-50%); padding: 14px 19px; font-size: 19px; }
+.lb-prev { left: 12px; }
+.lb-next { right: 12px; }
+.lb-count { position: absolute; bottom: 14px; color: #fff; font-size: 12px; }
+
+/* 좁은 폭(포털 위젯, 휴대폰)에서도 가로로 넘치지 않게 한다. */
+@media (max-width: 620px) {
+  #app { padding: 14px; }
+  .room { flex-wrap: wrap; }
+  .room-price { text-align: left; min-width: 0; width: 100%; padding-left: 107px; }
+}
+
+@media (max-width: 480px) {
+  #app { padding: 12px; }
+
+  /* 조회 조건: 한 줄에 다 못 넣으므로 두 칸씩 접는다 */
+  .bar { gap: 8px; }
+  .pick { flex: 1 1 46%; min-width: 0; }
+  select { min-width: 0; width: 100%; padding: 7px 8px; }
+  #search { flex: 1 1 100%; }
+
+  /* 달력: 칸이 좁아지므로 상태를 짧게 쓴다 (예약가능 → 가능) */
+  .cell { min-height: 56px; padding: 5px 2px; gap: 2px; }
+  .cell .d { font-size: 12px; }
+  .cell .badge { font-size: 0; padding: 1px 5px; }
+  .cell .badge::after { content: attr(data-short); font-size: 11px; }
+
+  .legend { gap: 12px; font-size: 11px; }
+  .month-nav { gap: 12px; }
+
+  .thumb { width: 52px; height: 40px; flex-basis: 52px; }
+  .room-price { padding-left: 89px; }
+}

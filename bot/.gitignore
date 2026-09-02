@@ -1,0 +1,11 @@
+node_modules/
+dist/
+
+# 탐색 기록물: 사이트 응답 원문이 들어 있으므로 커밋하지 않는다.
+docs/captures/
+
+# 비밀은 Secret Manager 에서만 읽는다. 로컬 파일로 두지 않는다.
+.env
+.env.*
+*.pem
+storage-state*.json

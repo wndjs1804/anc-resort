@@ -1,0 +1,14 @@
+# 로그
+*-debug.log
+firebase-debug.log
+
+# 로컬 자격 (있어서는 안 되지만 방어적으로)
+.env
+.env.*
+*-service-account*.json
+
+# 접근 토큰이 들어 있음
+web/게시판-삽입-코드.txt
+
+# Firebase CLI 캐시
+.firebase/

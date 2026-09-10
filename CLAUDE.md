@@ -229,7 +229,7 @@ GET  /content
   → { items: [...] }
 
 GET  /holidays?year=2026
-  → { year, days: { "2026-09-24": "추석", ... } }
+  → { year, days: { "2026-09-24": "추석 연휴", "2026-09-25": "추석", ... } }
 
 POST /admin/login    { password } → { session, expiresIn }
 POST /admin/content  { action, kind, id, ... } → { ok }

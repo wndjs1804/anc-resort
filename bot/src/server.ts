@@ -11,7 +11,6 @@
 
 import crypto from 'node:crypto';
 import http from 'node:http';
-import Holidays from 'date-holidays';
 import { getStorage } from 'firebase-admin/storage';
 
 import { ananttiAdapter } from './adapters/anantti.ts';
@@ -19,6 +18,7 @@ import { hanwhaAdapter } from './adapters/hanwha.ts';
 import { sonoAdapter } from './adapters/sono.ts';
 import { AdapterError, type AdapterErrorCode, type Node, type ResortAdapter, type ResortId } from './adapters/types.ts';
 import { closeAll, getContext, getLoginCount } from './browser.ts';
+import { koreanPublicHolidays } from './holidays.ts';
 import { getChildNodes, getNode, getPortalContent, removePortalContent, savePortalContent, writeDetail, writeSnapshot } from './store.ts';
 
 const PORT = Number(process.env.PORT ?? 8080);
@@ -357,19 +357,7 @@ async function handleHealth(): Promise<unknown> {
 
 function handleHolidays(year: number): unknown {
   if (!Number.isInteger(year) || year < 2020 || year > 2100) throw new AdapterError('parse_failed', '연도가 올바르지 않습니다.');
-  const calendar = new Holidays('KR');
-  const days = new Map<string, string>();
-  const add = (date: string, name: string) => days.set(date, days.has(date) ? `${days.get(date)} · ${name}` : name);
-  for (const holiday of calendar.getHolidays(year).filter((item) => item.type === 'public')) {
-    const date = holiday.date.slice(0, 10); add(date, holiday.name);
-    if (holiday.name === '설날' || holiday.name === '추석') {
-      const center = new Date(`${date}T12:00:00Z`);
-      for (const [offset, suffix] of [[-1, '연휴'], [1, '연휴']] as const) {
-        const next = new Date(center); next.setUTCDate(next.getUTCDate() + offset); add(next.toISOString().slice(0, 10), `${holiday.name} ${suffix}`);
-      }
-    }
-  }
-  return { year, days: Object.fromEntries([...days].sort(([a], [b]) => a.localeCompare(b))) };
+  return { year, days: koreanPublicHolidays(year) };
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

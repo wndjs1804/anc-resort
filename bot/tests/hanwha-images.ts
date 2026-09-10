@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { parseHanwhaGallery } from '../scripts/lib/hanwha-images.ts';
+const src='https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/room.jpg';
+const page='https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=HTE';
+const html=`domSelectBox.val("HTE");<img src="advert.jpg"><!-- (s) .rs_gallery --><img src="${src}"><img src="${src}"><!-- (e) .rs_gallery --><img src="floor.jpg">`;
+assert.deepEqual(parseHanwhaGallery(html,page,'HTE'),[src]);
+assert.throws(()=>parseHanwhaGallery(html,page,'FAM'),/불일치/);
+assert.throws(()=>parseHanwhaGallery('domSelectBox.val("HTE");',page,'HTE'),/갤러리 없음/);
+assert.throws(()=>parseHanwhaGallery(html.replaceAll(src,'https://example.com/room.jpg'),page,'HTE'),/미확인/);
+console.log('PASS: 객실 코드 일치, 광고·평면도 제외, 중복 제거, 미확인 이미지 차단');

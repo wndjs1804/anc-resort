@@ -20,10 +20,13 @@
   - 객실 형태별 **회원가 합계** 와 날짜별 내역 (스마트요금 등 할인이 있으면 원가·할인 표시)
   - 정원(기준/최대), 객실 사진
   - (조건부) 같은 숙소 안 **동별 잔여 객실수** 한 줄 — §12 참고
-- 게시글을 열면 **마지막 조회 결과**가 조회 시각과 함께 먼저 보인다. 조회 버튼은 갱신용.
+- 게시글을 열거나 숙소 선택을 바꾼 직후에는 달력을 표시하지 않는다. 사용자가 숙소를 선택하고 **조회하기**를 눌러야 해당 조건의 달력 결과를 표시한다.
 - 조회 버튼은 횟수 제한 없이 누를 수 있어야 한다. 응답 목표 10초 이내.
 - 객실 목록의 계층(객실종류 → 전망 → 침대/취사 옵션 등)은 리조트·숙소마다 다르다. **화면은 계층 깊이와 명칭을 하드코딩하지 않고 봇이 읽어온 구조를 그대로 렌더링한다.**
 - 사내 게시판 게시글에 `<iframe>` 으로 삽입해 사용.
+- 객실 결과는 객실 종류별로 묶고 낮은 등급부터 표시한다. `가능 객실만 보기`는 `available`과 `closing`만 남긴다.
+- 대한민국 공휴일·명절 연휴·대체공휴일을 달력에 이름과 함께 표시한다.
+- 별도 관리자 페이지 없이 좌측 하단 이미지를 더블클릭해 관리자 로그인하며, 공지사항과 FAQ를 관리한다.
 
 ### 하지 않는 것
 - 예약, 취소, 대기 신청 등 **사이트 상태를 바꾸는 어떤 동작도 하지 않는다.** 읽기 전용.
@@ -37,7 +40,7 @@
 사내 게시판 게시글
   └─ <iframe src="https://<hosting>/?t=<token>">
         └─ web/  (정적 HTML + JS, Firebase Hosting)
-              ├─ Firestore 읽기: 기본정보, 마지막 조회 결과
+              ├─ Firestore 읽기: 기본정보, 명시적으로 조회한 조건의 저장 결과
               └─ HTTPS 호출 → bot/ (Cloud Run 서비스)
                                   ├─ Playwright 브라우저 상시 유지 (min instance 1)
                                   ├─ 로그인 세션 쿠키 보관·재사용
@@ -143,6 +146,17 @@ details/{nodeId}_{checkin}_{nights}    # 날짜 상세 마지막 조회 결과
     }
   ]
 
+portalContent/{contentId}              # 관리자 변경 공지·FAQ와 기본 FAQ 삭제 표시
+  kind: "notice" | "faq"
+  category, title, body
+  date                                  # notice만 yyyy-mm-dd
+  inlineImages: [ { url, path, name } ] # 내용에 붙여넣은 이미지, 개수 제한 없음
+  attachments: [                        # 일반 첨부파일
+    { url, path, name, contentType, size }
+  ]
+  deleted: false | true                 # 기본 FAQ 삭제는 tombstone으로 보존
+  updatedAt
+
 meta/config
   boardToken: "..."                      # iframe URL 토큰 (해시 저장)
 ```
@@ -211,10 +225,23 @@ POST /calendar   { resortId, nodeId, yyyyMM }
 POST /detail     { resortId, nodeId, checkin, nights }
   → { buildings: [...], rooms: [...], fetchedAt }
 
+GET  /content
+  → { items: [...] }
+
+GET  /holidays?year=2026
+  → { year, days: { "2026-09-24": "추석", ... } }
+
+POST /admin/login    { password } → { session, expiresIn }
+POST /admin/content  { action, kind, id, ... } → { ok }
+POST /admin/upload   { id, usage, name, contentType, data } → { url, path, name, contentType, size }
+
 GET  /health     → { ok, sessions: { sono: "alive" | "expired" } }
 ```
 
 - `/calendar` 성공 시 `snapshots/` 갱신, `/detail` 성공 시 `details/` 갱신.
+- `/content`는 정적 기본 FAQ에 합칠 관리자 변경분을 반환한다. `/admin/content`만 `portalContent/`를 쓴다.
+- `/admin/upload`는 관리자 세션을 확인한 뒤 파일 한 개를 Storage `portal/notices/`에 저장한다. 내용 이미지는 PNG/JPG/WebP 각 4MB 이하, 첨부파일은 모든 형식 각 10MB 이하이다.
+- 관리자 로그인은 8시간 서명 세션을 발급하며 동일 접속자의 실패는 15분 동안 5회로 제한한다.
 - 달력은 항상 1박 기준으로 조회한다(박수와 무관). 상세만 박수를 반영.
 
 ## 9. 화면 스펙 (web/)
@@ -223,13 +250,14 @@ GET  /health     → { ok, sessions: { sono: "alive" | "expired" } }
 
 1. **조회 조건 줄** — `[리조트] [지역] [숙소] [동] [박수 1~3, 기본 1박] [조회]`. 드롭다운은 `nodes` 트리에서 생성. 리조트에 따라 단계 수가 달라도 됨(없는 단계는 렌더링하지 않음). 날짜 선택 없음.
 2. **상태 줄** — "마지막 조회 9/2 14:32 · 회원가 기준 · 예약은 관리팀 ○○○에게 요청". 조회 중에는 "조회 중…" 표시, 버튼은 비활성화하지 않음(중복은 서버가 합침).
-3. **월 이동** — `[< 8월] 2026년 9월 [10월 >]`. 월을 넘기면 그 달의 `snapshots` 가 있으면 즉시 표시하고, 없거나 사용자가 조회를 누르면 `/calendar` 호출.
-4. **달력** — 7열. 각 칸에 날짜와 상태 뱃지 (가능=초록, 임박=주황, 대기=파랑, 마감=회색, unknown=점선). 일요일 빨강, 토요일 파랑. 날짜 클릭 = 체크인 선택. 박수가 2 이상이면 체크인부터 박수만큼 칸을 연하게 함께 강조.
+3. **월 이동** — `[< 8월] 2026년 9월 [10월 >]`. 월을 넘기면 그 달의 `snapshots` 가 있으면 즉시 표시하고, 없으면 리조트 사이트의 해당 월을 `/calendar`로 자동 조회한다. 리조트별 오픈 기간이 다르므로 화면에 공통 미래 월 상한을 두지 않는다.
+4. **달력** — 숙소를 선택하고 조회하기를 누른 뒤 표시한다. 7열이며 각 칸에 날짜와 상태 뱃지 (가능=초록, 잔여객실 적음=주황, 대기=파랑, 마감=회색, unknown=점선)를 둔다. 일요일·대한민국 공휴일은 빨강, 토요일은 파랑. 설날·추석 연휴와 대체공휴일은 휴일명도 표시한다. 날짜 클릭 = 체크인 선택. 박수가 2 이상이면 체크인부터 박수만큼 칸을 연하게 함께 강조.
 5. **상세 헤더** — "9/24(목) → 9/26(토) · 2박", 상세조회 시각, `[지금 다시 확인]` 버튼.
 6. **동별 잔여 줄(조건부)** — "델피노 동별 잔여 객실 · 2박 연박 기준", 동 이름과 실수를 칩으로. 선택된 동은 강조. 칩 클릭 시 그 동으로 전환 후 재조회. `buildings` 가 비어 있으면 이 영역 자체를 그리지 않는다.
-7. **객실 목록** — `rooms[].path` 로 그룹핑. 그룹 헤더: "소노벨 EAST · 패밀리 · 기준 2인 / 최대 4인". 행: 썸네일(없으면 아이콘) · 항목명(`path` 마지막 두 요소를 " · " 로 결합) · 상태 뱃지 · 금액. 금액은 합계 굵게, 아래 작은 글씨로 날짜별 내역 및 할인. `partial` 은 "연박 불가" 뱃지 + "24일만 가능". `full` 은 금액 `—`.
+7. **객실 목록** — `rooms[].path` 로 그룹핑하고 스탠다드·패밀리 → 디럭스·캐빈 → 프리미어 → 스위트 → 로얄·플래티넘 순으로 정렬한다. 같은 등급은 객실명순이다. 행: 썸네일(없으면 `사진 없음`) · 항목명 · 기준/최대 인원 · 상태 · 회원가 합계 · 사진 버튼. `가능 객실만 보기`는 예약가능과 잔여객실 적음만 표시하고 결과 수를 `2/4개`처럼 보여준다.
+8. **공지사항·FAQ 관리** — 좌측 하단 이미지를 더블클릭해 관리자 비밀번호를 입력한다. 인증되면 공지 등록·수정·삭제와 FAQ 추가·수정·삭제 버튼이 표시된다. 공지 내용 칸에는 `Ctrl+V`/`⌘V`로 이미지를 개수 제한 없이 붙여넣고, 모든 형식의 첨부파일을 여러 개 추가할 수 있다. 다시 더블클릭하면 로그아웃한다.
 
-스타일: 흰 배경, 얇은 테두리, 시스템 폰트, 그림자·그라데이션 없음. 게시판 안에서 이질감 없게. 폭은 100%, 높이는 내용에 맞춰 늘어남(iframe height 는 게시글에서 넉넉히 지정).
+스타일: ACE Blue 중심의 Clean Corporate + Modern Resort Illustration. 최종 제공된 밝은 Sky/Aqua/Green 일러스트를 Hero와 Sidebar에 전체 표시하고, 흰 카드·얇은 테두리·절제된 그림자를 사용한다. 폭은 100%, 높이는 내용에 맞춰 늘어난다.
 
 썸네일 클릭 시 사진 확대 모달(같은 페이지 내 오버레이). 사진이 여러 장이면 좌우 넘김.
 
@@ -237,6 +265,9 @@ GET  /health     → { ok, sessions: { sono: "alive" | "expired" } }
 
 - `firestore.rules`: 모든 컬렉션 **읽기만 허용**, 쓰기는 서비스 계정(Admin SDK)만. `sessions/`, `meta/` 는 클라이언트 읽기도 금지.
 - 봇 API는 `boardToken` 없이는 401. 토큰은 게시글 iframe URL 에만 존재. 유출 의심 시 `meta/config` 에서 교체.
+- 관리자 비밀번호는 `admin-password` Secret Manager에만 두며 브라우저 코드와 Firestore에는 저장하지 않는다. 브라우저에는 8시간 서명 세션만 `sessionStorage`로 보관한다.
+- Firestore의 `portalContent/`도 클라이언트 직접 쓰기를 금지하고, 관리자 세션을 검증한 Cloud Run Admin SDK만 쓴다.
+- 공지 파일은 `gs://anc-resort-rooms/portal/notices/`에 저장하며 Cloud Run 서비스 계정에 버킷 범위 `roles/storage.objectAdmin`만 부여한다.
 - 봇 Cloud Run 은 인증 없는 호출 허용하되(게시판 iframe 에서 직접 호출) CORS 를 Hosting 도메인으로 제한.
 - 리조트 계정 정보는 Secret Manager 에서만 읽는다. 로그에 URL·쿠키·계정 정보를 남기지 않는다.
 - 객실 사진은 사내 열람용으로만 Storage 에 보관. 외부 공개 금지(Storage 규칙으로 Hosting 도메인 제한 또는 서명 URL).
@@ -252,9 +283,9 @@ GET  /health     → { ok, sessions: { sono: "alive" | "expired" } }
 | 화면 URL | `https://anc-resort.web.app` (게시글 삽입 코드는 `web/게시판-삽입-코드.txt`) |
 | 사진 저장소 | `gs://anc-resort-rooms` — 다운로드 토큰이 든 주소로만 열람 가능 |
 | 서비스 계정 | `anc-resort-bot@anc-resort.iam.gserviceaccount.com` |
-| 비밀 | `sono-id` · `sono-pw` · `anantti-id` · `anantti-pw` · `session-key` · `board-token` |
+| 비밀 | `sono-id` · `sono-pw` · `anantti-id` · `anantti-pw` · `session-key` · `board-token` · `admin-password` |
 | 지원 리조트 | **소노**(동 35 · 객실 386) · **아난티**(숙소 6) · **한화**(숙소 13 / 위치 16) |
-| 배포 명령 | `bash 배포.sh` (봇+화면) · `bash 배포.sh bot` · `bash 배포.sh web` |
+| 배포 명령 | `bash 배포.sh` (봇+화면) · `bash 배포.sh bot` · `bash 배포.sh web`; 봇 배포는 `admin-password`를 포함한 모든 Secret을 재연결 |
 | 담당자용 문서 | `bot/docs/운영-안내.md` |
 | 결제 계정 | `ace-resort` (0148DB-6E07EC-8AAF66) · 예산 알림 월 5만원 |
 
@@ -284,7 +315,7 @@ GET  /health     → { ok, sessions: { sono: "alive" | "expired" } }
 # bot
 gcloud run deploy anc-resort-bot --source bot/ --region asia-northeast3 \
   --min-instances 0 --max-instances 2 --memory 2Gi --concurrency 4 --timeout 60 \
-  --set-secrets SONO_ID=sono-id:latest,SONO_PW=sono-pw:latest,SESSION_KEY=session-key:latest
+  --set-secrets SONO_ID=sono-id:latest,SONO_PW=sono-pw:latest,ANANTTI_ID=anantti-id:latest,ANANTTI_PW=anantti-pw:latest,HANWHA_ID=hanwha-id:latest,HANWHA_PW=hanwha-pw:latest,HANWHA_MEMBER_PW=hanwha-member-pw:latest,SESSION_KEY=session-key:latest,BOARD_TOKEN=board-token:latest,ADMIN_PASSWORD=admin-password:latest
 
 # web
 firebase deploy --only hosting,firestore:rules
@@ -311,8 +342,7 @@ firebase deploy --only hosting,firestore:rules
 - 회사 회원권으로 실제 쓸 수 있는 숙소가 16곳 전부인지
 
 **공통**
-- 객실 사진: 소노만 있다. 아난티는 예약 API 가 주지 않고, 소개 페이지와 객실을 잇는
-  식별자가 없어 이름으로 맞추면 틀린 사진이 붙는다(실제로 확인함). 한화는 미조사.
+- 객실 사진: 소노·아난티 지원. 아난티는 2026-09-10 공식 예약 페이지의 rmCode/RESERVE_RTYPE 분기에서 39개 대표 사진 그룹을 확인하고 고유 객실 ID 67개에 연결·배포했다. 비활성 갤러리에는 다른 숙소 사진이 섞여 있어 사용하지 않는다. `bot/docs/anantti-images/README.md` 참고. 한화도 2026-09-10 공개 안내의 LOC_CD/ROOM_TYPE_CD로 139객실, 별도 플라자 매핑으로 5객실 사진을 연결·배포했다. `bot/docs/hanwha-images/README.md` 참고.
 
 ## 12-1. 원래 스펙의 미확정 사항 (해소 완료)
 
@@ -344,7 +374,7 @@ firebase deploy --only hosting,firestore:rules
 | 달력 상태 | 5단계 (A/E/W/D/N) | **2단계** (오픈 여부만) | 3단계 |
 | 잔여 객실수 | ○ | 강남만 | ○ |
 | 날짜별 요금 | ○ | ✗ (합계만) | ○ |
-| 객실 사진 | ○ (591장) | ✗ | ✗ |
+| 객실 사진 | ○ | ○ (대표 사진 그룹 연결) | ○ (객실 코드 연결) |
 | 특이사항 | 위탁 3곳은 요금 방식이 다름 | CSRF 토큰 필수 | 숙소별 응답 형식 상이 |
 
 ### 반복해서 부딪힌 것들 (다음 리조트 작업 때 먼저 확인)

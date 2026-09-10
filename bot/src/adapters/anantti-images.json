@@ -1,0 +1,451 @@
+[
+  {
+    "property": "namhae",
+    "group": "pentADiv",
+    "title": "테라스하우스 A",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/namhae/pentA/pentAThumb.jpg",
+    "exact": [
+      "PET",
+      "WTR",
+      "TTR",
+      "KTR",
+      "KTL",
+      "TTL"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "namhae",
+    "group": "pentBDiv",
+    "title": "테라스하우스 B",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/namhae/pentB/pentBThumb.jpg",
+    "exact": [
+      "KPR",
+      "TPR"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "namhae",
+    "group": "pentCDiv",
+    "title": "테라스하우스 C",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/namhae/pentC/pentCThumb.jpg",
+    "exact": [
+      "KSR",
+      "TSR",
+      "TSL"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "namhae",
+    "group": "houseDiv",
+    "title": "더 하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/namhae/theHouse/theHouseThumb.jpg",
+    "exact": [],
+    "prefix": [
+      "TH"
+    ],
+    "exclude": []
+  },
+  {
+    "property": "namhae",
+    "group": "specialDiv",
+    "title": "전용객실",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/namhae/special/specialThumb.jpg",
+    "exact": [],
+    "prefix": [
+      "G"
+    ],
+    "exclude": []
+  },
+  {
+    "property": "chord",
+    "group": "terraceDiv",
+    "title": "테라스하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/chord/terrace/terraceThumb.jpg",
+    "exact": [
+      "PET"
+    ],
+    "prefix": [
+      "AT"
+    ],
+    "exclude": []
+  },
+  {
+    "property": "chord",
+    "group": "murataDiv",
+    "title": "무라타 하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/chord/murata/murataThumb.jpg",
+    "exact": [],
+    "prefix": [
+      "AM"
+    ],
+    "exclude": []
+  },
+  {
+    "property": "chord",
+    "group": "poolDiv",
+    "title": "풀 하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/chord/pool/poolThumb.jpg",
+    "exact": [
+      "APD"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "chord",
+    "group": "houseDiv",
+    "title": "더 하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/chord/theHouse/theHouseThumb.jpg",
+    "exact": [],
+    "prefix": [
+      "AH"
+    ],
+    "exclude": []
+  },
+  {
+    "property": "chord",
+    "group": "suiteDiv",
+    "title": "스위트",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/chord/suite/suiteThumb.jpg",
+    "exact": [
+      "APS"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "cove",
+    "group": "terraceDiv",
+    "title": "테라스풀하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/cove/terrace/terraceThumb.jpg",
+    "exact": [],
+    "prefix": [
+      "TH"
+    ],
+    "exclude": []
+  },
+  {
+    "property": "cove",
+    "group": "residenceOceanDiv",
+    "title": "레지던스 오션",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/cove/rdo/rdoThumb.jpg",
+    "exact": [],
+    "prefix": [
+      "RO"
+    ],
+    "exclude": []
+  },
+  {
+    "property": "cove",
+    "group": "residenceMountainDiv",
+    "title": "레지던스 마운틴",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/cove/rdm/rdmThumb.jpg",
+    "exact": [],
+    "prefix": [
+      "RM"
+    ],
+    "exclude": []
+  },
+  {
+    "property": "cove",
+    "group": "familyMauntainDiv",
+    "title": "패밀리 마운틴",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/cove/rfm/rfmThumb.jpg",
+    "exact": [],
+    "prefix": [
+      "AF"
+    ],
+    "exclude": []
+  },
+  {
+    "property": "cove",
+    "group": "seaSideDiv",
+    "title": "씨사이드",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/cove/seaside/seasideThumb.jpg",
+    "exact": [],
+    "prefix": [
+      "SS"
+    ],
+    "exclude": [
+      "SSS"
+    ]
+  },
+  {
+    "property": "cove",
+    "group": "royalDiv",
+    "title": "Royal Chapter",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/cove/seaside/seasideThumb.jpg",
+    "exact": [
+      "SSS"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "ganm",
+    "group": "SDiv",
+    "title": "Cabin S (Signature)",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/ganm/cabinS_main.jpg",
+    "exact": [
+      "5010010041"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "ganm",
+    "group": "BDiv",
+    "title": "Cabin B (Beyond)",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/ganm/cabinB_main.jpg",
+    "exact": [
+      "5010010040"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "ganm",
+    "group": "UDiv",
+    "title": "Cabin U (Upper)",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/ganm/Upper.jpg",
+    "exact": [
+      "5010010038"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "ganm",
+    "group": "TDiv",
+    "title": "Cabin T (Terrace)",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/ganm/cabinT_main.jpg",
+    "exact": [
+      "5010010037"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "ganm",
+    "group": "FDiv",
+    "title": "Cabin F (Family)",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/ganm/cabinF_main.jpg",
+    "exact": [
+      "5010010039"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "ganm",
+    "group": "CDiv",
+    "title": "Cabin C (Calm)",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/ganm/cabinC_main.jpg",
+    "exact": [
+      "5010010042"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "ganm",
+    "group": "CADiv",
+    "title": "Cabin C (Calm) 장애인용 Accessible room",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/ganm/cabinCAMain.jpg",
+    "exact": [
+      "5010010104"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "jeju",
+    "group": "houseADiv",
+    "title": "빌라하우스 A",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/jeju/houseA.jpg",
+    "exact": [
+      "ADS2",
+      "AS4",
+      "EADS2"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "jeju",
+    "group": "houseBDiv",
+    "title": "빌라하우스 B",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/jeju/houseB.jpg",
+    "exact": [
+      "BDS2"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "jeju",
+    "group": "houseCDiv",
+    "title": "빌라하우스 C",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/jeju/houseC.jpg",
+    "exact": [
+      "CDS2",
+      "CS4"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "jeju",
+    "group": "mHouseADiv",
+    "title": "맥스하우스 A",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/jeju/maxA.jpg",
+    "exact": [
+      "MAX1"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "jeju",
+    "group": "mHouseBDiv",
+    "title": "맥스하우스 B",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/jeju/maxB.jpg",
+    "exact": [
+      "MAX2"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "jeju",
+    "group": "mHouseCDiv",
+    "title": "맥스하우스 C",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/jeju/maxC.jpg",
+    "exact": [
+      "MAX3"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "village",
+    "group": "dupDiv",
+    "title": "듀플렉스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/village/duplex_20260812.jpg",
+    "exact": [
+      "CDH"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "village",
+    "group": "dupODiv",
+    "title": "듀플렉스-오션 하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/village/duplex-ocean-re.jpg",
+    "exact": [
+      "COD"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "village",
+    "group": "dupPDiv",
+    "title": "듀플렉스-풀 하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img//village/poolduplex_2311.jpg",
+    "exact": [
+      "CPD"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "village",
+    "group": "springDiv",
+    "title": "스프링 하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/village/springhouse-re.jpg",
+    "exact": [
+      "CSH",
+      "CSW"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "village",
+    "group": "mansonPDiv",
+    "title": "풀 하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/village/mansion-pool-re.jpg",
+    "exact": [
+      "MPH"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "village",
+    "group": "mansonSDiv",
+    "title": "스프링 하우스",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/village/mainson-spring-re.jpg",
+    "exact": [
+      "MSH",
+      "MSW"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "village",
+    "group": "manorADiv",
+    "title": "매너 하우스 A",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/village/manor-a-re.jpg",
+    "exact": [
+      "MAP",
+      "MNA",
+      "PET"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "village",
+    "group": "manorBDiv",
+    "title": "매너 하우스 B",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/village/manor-b-re.jpg",
+    "exact": [
+      "MBP",
+      "MNB"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "village",
+    "group": "manorCDiv",
+    "title": "매너 하우스 C",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/village/manor-c-re.jpg",
+    "exact": [
+      "MNC"
+    ],
+    "prefix": [],
+    "exclude": []
+  },
+  {
+    "property": "village",
+    "group": "manorDDiv",
+    "title": "매너 하우스 D",
+    "image": "https://cdn.ananti.kr/plf/ui/img/reservation/roomImg/village/manor-d-re.jpg",
+    "exact": [
+      "MND"
+    ],
+    "prefix": [],
+    "exclude": []
+  }
+]

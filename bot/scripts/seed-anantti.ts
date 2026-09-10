@@ -6,7 +6,7 @@
  *
  * 아난티는 숙소 아래 '동' 이 없고, 객실의 정원·이름이 조회할 때마다 응답에 함께 오므로
  * 미리 저장해 둘 것은 **숙소 목록뿐**이다. 로그인도 필요 없다.
- * (사진은 사이트가 주지 않는다 — docs/anantti-site-notes.md §4)
+ * (사진 경로는 별도로 확인됨. 현재 이 스크립트는 사진을 수집하지 않는다 — docs/anantti-images/README.md)
  */
 
 import { PROPERTIES } from '../src/adapters/anantti.ts';

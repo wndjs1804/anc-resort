@@ -101,7 +101,7 @@
   "CUST_NO":"<CUST_NO>", "MEMB_NO":"<MEMB_NO>", "MEMB_DIV_CD":"01",
   "WAIT_RSRV_YN":"N", "CONT_NO":"", "MEMB_MAST_NO":"", "CUST_IDNT_NO":"", "RSRV_LOC_CD":"" }
 ```
-(`END_DATE` 도 키에 있다 — 기간을 지정하는 것으로 보인다. TODO(verify))
+`STRT_DATE`·`END_DATE`로 월의 시작일과 마지막 날을 지정한다. 2026-09-10 운영 API에서 2026년 11월 30일치와 12월 31일치 응답을 확인했다.
 
 응답 `ds_result[]`:
 
@@ -168,8 +168,8 @@
 ## 7. 남은 확인 사항
 
 - [ ] **회원권 비밀번호 화면의 폼 구조** (`login_membership_password.do`) — 어댑터 자동 로그인에 필요
-- [ ] `REMPRR0113` 의 `END_DATE` 로 조회 기간을 얼마나 넓힐 수 있는가 (한 번에 몇 달치?)
+- [x] `REMPRR0113`의 `STRT_DATE`·`END_DATE`로 요청한 한 달 전체 조회 확인. 월 이동 시 해당 월을 별도 호출한다.
 - [ ] `CUST_NO` · `MEMB_NO` 를 어떤 API 로 얻는가 (지금은 페이지에서 오는 것으로 보임)
 - [ ] 회사 회원권으로 실제 쓸 수 있는 숙소가 16곳 전부인지
-- [ ] 객실 사진을 주는 API 가 있는가
+- [x] 사진 경로 확인(2026-09-10): 공개 `rs_room.do?bp_cd=LOC_CD&rm_cd=ROOM_TYPE_CD`에서 객실별 갤러리를 읽을 수 있음. 15개 위치의 선택 목록 확인, 저장 상세 63종 코드 일치. 이후 더플라자 5객실도 코드·이름으로 매핑하여 총 144객실 사진 연결·배포 완료. [조사 결과](hanwha-images/README.md).
 - [ ] `RSRV_POSBL_CNT` 가 몇 이하일 때 `마감임박` 으로 볼지 (기준 정하기)

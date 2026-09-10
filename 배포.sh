@@ -25,7 +25,7 @@ deploy_bot() {
     --set-secrets SONO_ID=sono-id:latest,SONO_PW=sono-pw:latest,\
 ANANTTI_ID=anantti-id:latest,ANANTTI_PW=anantti-pw:latest,\
 HANWHA_ID=hanwha-id:latest,HANWHA_PW=hanwha-pw:latest,HANWHA_MEMBER_PW=hanwha-member-pw:latest,\
-SESSION_KEY=session-key:latest,BOARD_TOKEN=board-token:latest \
+SESSION_KEY=session-key:latest,BOARD_TOKEN=board-token:latest,ADMIN_PASSWORD=admin-password:latest \
     --set-env-vars "^@^ALLOWED_ORIGINS=https://anc-resort.web.app,https://anc-resort.firebaseapp.com" \
     | tail -3
 }

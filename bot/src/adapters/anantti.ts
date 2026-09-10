@@ -11,6 +11,7 @@
  */
 
 import type { BrowserContext, Page } from 'playwright';
+import { ananttiImageGroup } from './anantti-images.ts';
 
 import { claimLoginSlot, saveStorageState } from '../browser.ts';
 import { getCredentials } from '../secrets.ts';
@@ -242,6 +243,7 @@ function readRoomRow(r: AnyRow, shape: 'lower' | 'upper') {
   if (shape === 'upper') {
     return {
       code: str(r.RESERVE_RTYPE),
+      imageCode: str(r.RESERVE_RTYPE),
       name: str(r.RTYPE_NAME),
       sub: str(r.VIEWTYPE),
       capacity: num(r.RESERVE_PCNT),
@@ -255,6 +257,7 @@ function readRoomRow(r: AnyRow, shape: 'lower' | 'upper') {
   }
   return {
     code: str(r.rmType),
+    imageCode: str(r.rmCode),
     name: str(r.rmKorDesc || r.rmDesc),
     sub: str(r.bedType),
     capacity: num(r.gst),
@@ -376,6 +379,7 @@ export const ananttiAdapter: ResortAdapter = {
         perNight: [],
         siteRef: {
           bsns: cfg.bsns, property: cfg.path, rmType: r.code,
+          rmCode: r.imageCode, photoGroup: ananttiImageGroup(cfg.path, r.imageCode),
           capacity: r.capacity, remaining: r.remaining,
           minPrice: r.minPrice, rateDesc: r.rateDesc || null, reason: r.reason || null,
         },

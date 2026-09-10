@@ -1,0 +1,27 @@
+[
+  {
+    "id": "hanwha-3901-BUK",
+    "name": "비즈니스 룸",
+    "code": "BUK"
+  },
+  {
+    "id": "hanwha-3901-DXK",
+    "name": "디럭스 룸 (킹)",
+    "code": "DXK"
+  },
+  {
+    "id": "hanwha-3901-DXT",
+    "name": "디럭스 룸 (트윈)",
+    "code": "DXT"
+  },
+  {
+    "id": "hanwha-3901-PMK",
+    "name": "프리미어 스위트",
+    "code": "PMK"
+  },
+  {
+    "id": "hanwha-3901-CPK",
+    "name": "플라자 스위트",
+    "code": "CPK"
+  }
+]

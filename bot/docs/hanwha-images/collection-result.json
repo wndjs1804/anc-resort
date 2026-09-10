@@ -1,0 +1,1296 @@
+{
+  "checkedAt": "2026-09-10T01:04:16.012Z",
+  "apply": true,
+  "results": [
+    {
+      "id": "hanwha-0101-DMO",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=DMO",
+      "name": "디럭스(모던)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/174001984580451100.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/174001984643146108.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/174001984679644050.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/174001984716119266.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/174001984751781253.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/174001984786636317.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/174001984821255105.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/174001984859043104.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/174001984893344568.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-FAM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=FAM",
+      "name": "디럭스",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479647143098514.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479647146382748.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479647147954077.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479647149055268.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479653144086578.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479653145225410.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479653145956559.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-FTB",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=FTB",
+      "name": "디럭스(트윈베드)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168188174164641876.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168188174168544493.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168188174171520280.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168188174174983693.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168188174176444714.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-FTL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=FTL",
+      "name": "디럭스(트윈베드_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169077733292043933.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169077733295578083.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169077733296114554.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169077733296684507.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-FSS",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=FSS",
+      "name": "디럭스(원룸)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479758315691397.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479758316933713.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479758317843989.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479758318941875.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479758319609526.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479758319946727.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-HTL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=HTL",
+      "name": "디럭스(원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479764832794886.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479764833125203.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479764834917247.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479764835218217.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479764835565729.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-HTE",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=HTE",
+      "name": "디럭스(유러피언_원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172552141745491619.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172552141817764946.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172552141885603889.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172552141954109214.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172552142022138850.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172552142092781502.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-TH1",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=TH1",
+      "name": "디럭스(티니핑 프린세스룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176103163763218660.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176103163860417221.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176103163925822346.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176103163991403611.jpg",
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176103164058228296.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-TH2",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=TH2",
+      "name": "디럭스(티니핑 연구소룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176103192614345269.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-TH3",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=TH3",
+      "name": "디럭스(티니핑 슈팅스타룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176103202194714593.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-RYL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=RYL",
+      "name": "로얄",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479879464569429.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-RMO",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=RMO",
+      "name": "로얄(모던)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172552112387841686.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-RYE",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=RYE",
+      "name": "로얄(유러피언_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/175340962004684026.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-GLA",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=GLA",
+      "name": "프리미어 스위트(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167479918001992480.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0101-PLT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0101&rm_cd=PLT",
+      "name": "플래티넘",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172101864269148514.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0102-FAM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0102&rm_cd=FAM",
+      "name": "디럭스",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167504022600550889.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0102-RYL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0102&rm_cd=RYL",
+      "name": "로얄",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167504049880531027.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0401-FAM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0401&rm_cd=FAM",
+      "name": "디럭스",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168103085044536384.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0401-FST",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0401&rm_cd=FST",
+      "name": "디럭스(싱글트윈)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168103096810232008.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0401-TH1",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0401&rm_cd=TH1",
+      "name": "디럭스(티니핑 프린세스룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176102547254816777.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0401-TH2",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0401&rm_cd=TH2",
+      "name": "디럭스(티니핑 연구소룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176102557017890406.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0401-TH3",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0401&rm_cd=TH3",
+      "name": "디럭스(티니핑 슈팅스타룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176102566032127175.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0401-RYL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0401&rm_cd=RYL",
+      "name": "로얄",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168102985858747378.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0701-FST",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0701&rm_cd=FST",
+      "name": "디럭스(싱글트윈)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176103438598883751.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0701-FAM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0701&rm_cd=FAM",
+      "name": "디럭스",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176103445404441459.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0701-HTL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0701&rm_cd=HTL",
+      "name": "디럭스(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/176103462685751736.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0701-RYL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0701&rm_cd=RYL",
+      "name": "로얄",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/171332085223058756.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0701-PLT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0701&rm_cd=PLT",
+      "name": "플래티넘",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172108929211733889.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-HTL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=HTL",
+      "name": "디럭스(원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168903654313207149.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-HTJ",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=HTJ",
+      "name": "디럭스(원룸_재즈_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170917170881202271.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-FQJ",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=FQJ",
+      "name": "디럭스(오션뷰_재즈_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170917184837375473.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-HTP",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=HTP",
+      "name": "디럭스(원룸_팝_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170917200453216172.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-FOB",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=FOB",
+      "name": "디럭스(오륙도뷰_알앤비_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170917222127429140.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-FAK",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=FAK",
+      "name": "디럭스(키즈룸_원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168903678424695136.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-HTT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=HTT",
+      "name": "디럭스(시네마_원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168913656058179663.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-FAW",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=FAW",
+      "name": "디럭스(워케이션_원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/174884562818217225.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-FOR",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=FOR",
+      "name": "디럭스(오륙도뷰)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168903759914698551.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-FAQ",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=FAQ",
+      "name": "디럭스(오션뷰_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168903769698837719.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-RYL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=RYL",
+      "name": "로얄(오션뷰)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168903791035240665.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-RYH",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=RYH",
+      "name": "로얄(힐링룸)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168903847244938114.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0801-PLT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0801&rm_cd=PLT",
+      "name": "플래티넘",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/171686454826434140.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-FAM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=FAM",
+      "name": "디럭스",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/178831592659167544.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-DTL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=DTL",
+      "name": "디럭스(투룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/178832540288261197.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-DLC",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=DLC",
+      "name": "디럭스(시네마_원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169329273300488612.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-DHQ",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=DHQ",
+      "name": "디럭스(오션뷰_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/178832585935054467.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-PO1",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=PO1",
+      "name": "디럭스(뽀로로 MAKE)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168810812399137083.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-PO2",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=PO2",
+      "name": "디럭스(뽀로로 READ)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168810824954217459.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-PO5",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=PO5",
+      "name": "디럭스(뽀로로 PEEKABOO)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168810836197011738.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-SUI",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=SUI",
+      "name": "스위트",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/178832616938924153.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-SHI",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=SHI",
+      "name": "스위트(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/178832719168451173.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-SUC",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=SUC",
+      "name": "스위트(시네마_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169329283726223721.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-SHQ",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=SHQ",
+      "name": "스위트(오션뷰_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/178832732134858268.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-RYQ",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=RYQ",
+      "name": "로얄(오션뷰_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/178832753078971472.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-RYC",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=RYC",
+      "name": "로얄(오션뷰_시네마_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/178833031090799482.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-0901-PLT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=0901&rm_cd=PLT",
+      "name": "플래티넘",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/171558940803691768.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1001-FAM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1001&rm_cd=FAM",
+      "name": "디럭스",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169960054198897664.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1001-HTL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1001&rm_cd=HTL",
+      "name": "디럭스(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169960114537663582.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1001-PLT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1001&rm_cd=PLT",
+      "name": "플래티넘",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172230001909035136.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1002-DMH",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1002&rm_cd=DMH",
+      "name": "디럭스(모던_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/175247657925314609.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1002-HTL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1002&rm_cd=HTL",
+      "name": "디럭스(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/178582268181061500.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1002-SUI",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1002&rm_cd=SUI",
+      "name": "스위트(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169960310257909519.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1002-SP1",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1002&rm_cd=SP1",
+      "name": "스위트(뽀로로 MAKE_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169960458502027273.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1002-SP2",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1002&rm_cd=SP2",
+      "name": "스위트(뽀로로 READ_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169960512478483767.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1002-SP5",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1002&rm_cd=SP5",
+      "name": "스위트(뽀로로 PEEKABOO_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169960542002140698.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1002-RYL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1002&rm_cd=RYL",
+      "name": "로얄(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/178227580316318760.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1002-GLA",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1002&rm_cd=GLA",
+      "name": "프리미어 스위트(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168776387741709308.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1002-GLC",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1002&rm_cd=GLC",
+      "name": "프리미어 스위트(시네마_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168990254965525958.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1002-GLK",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1002&rm_cd=GLK",
+      "name": "프리미어 스위트(키즈_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168776411229303508.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1101-DTL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1101&rm_cd=DTL",
+      "name": "디럭스(투룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170501870533022859.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1101-FAM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1101&rm_cd=FAM",
+      "name": "디럭스",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169802916668177753.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1101-HTL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1101&rm_cd=HTL",
+      "name": "디럭스(원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169803371458648176.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1101-FAK",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1101&rm_cd=FAK",
+      "name": "디럭스(키즈룸)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169803406786927269.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1101-SUI",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1101&rm_cd=SUI",
+      "name": "스위트(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168655958447381701.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1101-DLM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1101&rm_cd=DLM",
+      "name": "디럭스(멍패커_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168656103274769261.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1101-SUM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1101&rm_cd=SUM",
+      "name": "스위트(멍패커_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/168656050829688550.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1101-PLT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1101&rm_cd=PLT",
+      "name": "플래티넘",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/171679976801975572.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1601-SUI",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1601&rm_cd=SUI",
+      "name": "스위트",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167504391816486372.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1601-RYL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1601&rm_cd=RYL",
+      "name": "로얄",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167504430176157211.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1601-RSB",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1601&rm_cd=RSB",
+      "name": "로얄 스위트",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167504475405770889.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1601-RSA",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1601&rm_cd=RSA",
+      "name": "프레지덴셜 스위트",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167504499242801904.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1601-SUM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1601&rm_cd=SUM",
+      "name": "스위트(멍패커_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167504420560945954.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1601-RYM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1601&rm_cd=RYM",
+      "name": "로얄(멍패커_시네마_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167504440402922528.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1601-RSM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1601&rm_cd=RSM",
+      "name": "로얄 스위트(멍패커_시네마_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167504488643088476.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1601-RPM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1601&rm_cd=RPM",
+      "name": "프레지덴셜 스위트(멍패커_시네마_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/167504511443683316.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-1601-PLT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=1601&rm_cd=PLT",
+      "name": "플래티넘",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/173681492511827292.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-FAM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=FAM",
+      "name": "디럭스(원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425755808031930.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-PO1",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=PO1",
+      "name": "디럭스(뽀로로 MAKE_원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425761284441652.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-PO5",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=PO5",
+      "name": "디럭스(뽀로로 PEEKABOO_원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425765498432258.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-PO6",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=PO6",
+      "name": "디럭스(뽀로로 MOTIONPLAY_원룸_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425769979407478.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-SUI",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=SUI",
+      "name": "스위트(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425780875001111.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-SUB",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=SUB",
+      "name": "스위트 베베룸 (호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/173733645501865304.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-SUQ",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=SUQ",
+      "name": "스위트(오션뷰_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425816587499819.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-SP1",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=SP1",
+      "name": "스위트(뽀로로 MAKE_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425896959296625.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-SP5",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=SP5",
+      "name": "스위트(뽀로로 PEEKABOO_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425905804499556.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-SP6",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=SP6",
+      "name": "스위트(뽀로로 MOTIONPLAY_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425912657272019.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-SQ1",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=SQ1",
+      "name": "스위트(뽀로로 MAKE_오션뷰_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425921677678255.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-SQ5",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=SQ5",
+      "name": "스위트 (뽀로로 PEEKABOO_오션뷰_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425929581768096.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-SQ6",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=SQ6",
+      "name": "스위트 (뽀로로 MOTIONPLAY_오션뷰_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425936549570149.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-RYL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=RYL",
+      "name": "로얄(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425975134206840.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-RYQ",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=RYQ",
+      "name": "로얄(오션뷰_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425980301872723.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2101-RP6",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2101&rm_cd=RP6",
+      "name": "로얄(뽀로로 MOTIONPLAY_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170425986189830148.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2102-GLA",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2102&rm_cd=GLA",
+      "name": "프리미어 스위트(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170797253990087584.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2102-GLB",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2102&rm_cd=GLB",
+      "name": "프리미어 스위트(2F,4F_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170797281052907507.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2102-GLX",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2102&rm_cd=GLX",
+      "name": "프리미어 스위트(릴렉싱_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170797297282158110.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2102-PTS",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2102&rm_cd=PTS",
+      "name": "프리미어 테라스(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170797307655162802.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2102-PLT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2102&rm_cd=PLT",
+      "name": "플래티넘(호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170797328490383783.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2102-PLB",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2102&rm_cd=PLB",
+      "name": "플래티넘(복층_호텔형)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170797353543045578.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-STD",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=STD",
+      "name": "스탠다드 트윈",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262275162092083.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-STO",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=STO",
+      "name": "스탠다드 트윈(오션뷰)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262293334651499.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-STQ",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=STQ",
+      "name": "스탠다드 쿼드",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262322950690269.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-JSU",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=JSU",
+      "name": "주니어 스위트 트윈",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262363492341439.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-JSO",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=JSO",
+      "name": "주니어 스위트 더블(오션뷰)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262407584167679.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-JSF",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=JSF",
+      "name": "주니어 스위트 패밀리(오션뷰)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262546811521207.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-SSU",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=SSU",
+      "name": "슈페리어 스위트",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262585209970930.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-SSO",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=SSO",
+      "name": "슈페리어 스위트(오션뷰)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262607452210002.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-SSB",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=SSB",
+      "name": "슈페리어 스위트(오션뷰_배리어 프리)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262628675571349.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-DSU",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=DSU",
+      "name": "디럭스 스위트",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262762053214966.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-TSU",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=TSU",
+      "name": "테라스 스위트",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262942040104044.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-RTS",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=RTS",
+      "name": "로얄 테라스 스위트",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262967782101592.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2201-PRS",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2201&rm_cd=PRS",
+      "name": "프리미어 스위트",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170262993603358228.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2401-LBS",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2401&rm_cd=LBS",
+      "name": "레이드백 Small (LAID BACK Small)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249783219162535.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2401-LBM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2401&rm_cd=LBM",
+      "name": "레이드백 Medium (LAID BACK Medium)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249798743329983.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2401-LBL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2401&rm_cd=LBL",
+      "name": "레이드백 Large (LAID BACK Large)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249809419445048.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2401-RUS",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2401&rm_cd=RUS",
+      "name": "라이즈업 Small (RISE UP Small)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249820290535542.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2401-RUM",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2401&rm_cd=RUM",
+      "name": "라이즈업 Medium (RISE UP Medium)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249833159057259.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2401-RXL",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2401&rm_cd=RXL",
+      "name": "라이즈업 X Large (RISE UP X Large)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249846002849273.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2401-PTH",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2401&rm_cd=PTH",
+      "name": "펜트하우스 행텐",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249855832968229.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-CSP",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=CSP",
+      "name": "컴포트 슈페리어",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169164456905031205.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-CLP",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=CLP",
+      "name": "컴포트 슈페리어(잔망루피)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/173916795373759756.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-CDD",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=CDD",
+      "name": "컴포트 디럭스 더블",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/169164447414004057.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-CLD",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=CLD",
+      "name": "컴포트 디럭스 더블(잔망루피)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/173916813070485697.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-CDT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=CDT",
+      "name": "컴포트 디럭스 트윈",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249867030897840.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-MSU",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=MSU",
+      "name": "마티에 스위트",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249889965917792.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-MLU",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=MLU",
+      "name": "마티에 스위트(잔망루피)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/173916840388285893.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-MSO",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=MSO",
+      "name": "마티에 스위트(오션뷰)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249900790983165.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-MLO",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=MLO",
+      "name": "마티에 스위트(오션뷰_잔망루피)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/170624313501034691.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-MSB",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=MSB",
+      "name": "마티에 스위트(배리어 프리)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249909157101969.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-MPT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=MPT",
+      "name": "마티에 프레스티지",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/172249915537072826.jpg"
+      ],
+      "status": "saved"
+    },
+    {
+      "id": "hanwha-2601-MLT",
+      "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/rs_room.do?bp_cd=2601&rm_cd=MLT",
+      "name": "마티에 프레스티지(잔망루피)",
+      "sources": [
+        "https://18db057190b78dc7.kinxzone.com/upfiles/resort/room/173916872781456867.jpg"
+      ],
+      "status": "saved"
+    }
+  ]
+}

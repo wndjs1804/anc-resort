@@ -14,6 +14,8 @@
     "dev": "tsx src/server.ts",
     "sync:images": "tsx scripts/sync-images.ts",
     "explore": "tsx scripts/explore.ts",
+    "design": "tsx scripts/explore-design.ts",
+    "design:mobile": "tsx scripts/explore-design.ts --mobile",
     "explore:anantti": "tsx scripts/explore.ts --resort=anantti",
     "seed:anantti": "tsx scripts/seed-anantti.ts",
     "test:anantti": "tsx scripts/test-adapter.ts --resort=anantti",
@@ -23,6 +25,7 @@
     "test:hanwha": "tsx scripts/test-adapter.ts --resort=hanwha"
   },
   "dependencies": {
+    "date-holidays": "^3.36.1",
     "firebase-admin": "^14.3.0",
     "playwright": "^1.49.0",
     "tsx": "^4.19.2"

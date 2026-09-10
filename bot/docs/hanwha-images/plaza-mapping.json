@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-09-10",
+  "sourcePage": "https://www.hanwharesort.co.kr/irsweb/resort3/resort/plaza/rsa_room.do?bp_cd=3901",
+  "applied": true,
+  "mappings": [
+    {
+      "code": "BUK",
+      "name": "비즈니스 룸",
+      "file": "pic_theplaza_08.jpg",
+      "source": "https://www.hanwharesort.co.kr/irsweb/resort3/app/images/alliance/room_img/pic_theplaza_08.jpg"
+    },
+    {
+      "code": "DXK",
+      "name": "디럭스 룸 (킹)",
+      "file": "pic_theplaza_01.jpg",
+      "source": "https://www.hanwharesort.co.kr/irsweb/resort3/app/images/alliance/room_img/pic_theplaza_01.jpg"
+    },
+    {
+      "code": "DXT",
+      "name": "디럭스 룸 (트윈)",
+      "file": "pic_theplaza_01.jpg",
+      "source": "https://www.hanwharesort.co.kr/irsweb/resort3/app/images/alliance/room_img/pic_theplaza_01.jpg"
+    },
+    {
+      "code": "PMK",
+      "name": "프리미어 스위트",
+      "file": "pic_theplaza_02.jpg",
+      "source": "https://www.hanwharesort.co.kr/irsweb/resort3/app/images/alliance/room_img/pic_theplaza_02.jpg"
+    },
+    {
+      "code": "CPK",
+      "name": "플라자 스위트",
+      "file": "pic_theplaza_03.jpg",
+      "source": "https://www.hanwharesort.co.kr/irsweb/resort3/app/images/alliance/room_img/pic_theplaza_03.jpg"
+    }
+  ]
+}

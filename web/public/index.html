@@ -3,79 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>휴양시설 이용조회</title>
+<meta name="theme-color" content="#1F6BFF">
+<title>휴양시설 이용조회 · ACE nanochem</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+<a class="skip-link" href="#mainContent">본문으로 바로가기</a>
+<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-resort" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 18 0H3Zm9-9v17m-5 0h10M8 12c0-5 2-9 4-9s4 4 4 9M3 22h18"/></symbol>
+<symbol id="i-notice" viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5V3Zm10 0v5h4M9 12h6m-6 4h6M9 7h2"/></symbol>
+<symbol id="i-faq" viewBox="0 0 24 24"><path d="M3 3h18v14h-8l-5 4v-4H3V3Z M9 8a3 3 0 1 1 5 2c-1 1-2 1-2 2m0 2v.1"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6m10-6v6M3 11h18m-14 4h2m3 0h2m3 0h1m-11 3h2m3 0h2"/></symbol>
+</defs></svg>
+<aside class="sidebar">
+  <a href="#inquiry" class="brand" aria-label="ACE nanochem 휴양시설 홈"><span class="brand-image" role="img" aria-label="ACE nanochem"></span></a>
+  <nav aria-label="주 메뉴">
+    <a href="#inquiry" class="nav-item active" aria-current="page"><svg><use href="#i-resort"/></svg>이용조회</a>
+    <a href="#notices" class="nav-item"><svg><use href="#i-notice"/></svg>공지사항</a>
+    <a href="#faq" class="nav-item"><svg><use href="#i-faq"/></svg>자주 묻는 질문</a>
+  </nav>
+  <div id="adminTrigger" class="sidebar-bottom" title="" aria-label="ACE nanochem"><p>Rest Better,<br>Return Brighter</p><strong>A BRIGHTER TOMORROW<br>WITH ACE NANOCHEM</strong><small>PEOPLE · TECHNOLOGY · SUSTAINABILITY</small></div>
+</aside>
 <div id="app">
-
-  <!-- 0. 새 창으로 열렸을 때만 보이는 머리말 -->
-  <header id="pageHead">
-    <h1>휴양시설 이용조회</h1>
-    <p class="muted" id="pageSub" hidden>회사 휴양시설 회원권의 예약가능 여부와 회원가를 확인하는 화면입니다.</p>
+  <header id="pageHead" class="hero">
+    <div class="hero-copy"><h1 id="pageTitle"><span>휴양시설</span> 이용조회</h1><p id="pageSub">회사 휴양시설의 예약 가능 일정과 객실 정보를 확인하세요.</p></div>
+    <p class="hero-slogan">Good Days<br><span>Brighter People</span></p>
   </header>
-
-  <!-- 1. 조회 조건 -->
-  <div class="bar" id="controls">
-    <span class="picks" id="picks"></span>
-    <label class="pick">
-      <span class="pick-label">박수</span>
-      <select id="nights">
-        <option value="1" selected>1박</option>
-        <option value="2">2박</option>
-      </select>
-    </label>
-    <button id="search" class="primary">조회</button>
-  </div>
-
-  <!-- 2. 상태 줄 -->
-  <div class="status" id="status">불러오는 중…</div>
-
-  <!-- 3~4. 달력 -->
-  <section id="calendarSection" hidden>
-    <div class="month-nav">
-      <button id="prevMonth" class="ghost">‹ 이전</button>
-      <strong id="monthLabel"></strong>
-      <button id="nextMonth" class="ghost">다음 ›</button>
-    </div>
-    <div class="legend" id="legend"></div>
-    <p class="cal-hint muted" id="calHint" hidden></p>
-    <div class="cal-head">
-      <div class="sun">일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div class="sat">토</div>
-    </div>
-    <div class="cal" id="calendar"></div>
-  </section>
-
-  <!-- 5~7. 상세 -->
-  <section id="detailSection" hidden>
-    <div class="detail-head">
-      <div>
-        <strong id="detailTitle"></strong>
-        <span class="muted" id="detailFetched"></span>
+  <main id="mainContent" tabindex="-1">
+    <div id="inquiryPage" class="page-view">
+      <div class="bar card" id="controls">
+        <span class="picks" id="picks"></span>
+        <label class="pick nights-pick"><span class="pick-label">박수</span><select id="nights"><option value="1" selected>1박</option><option value="2">2박</option></select></label>
+        <button id="search" class="primary"><svg><use href="#i-search"/></svg>조회하기</button>
       </div>
-      <button id="refreshDetail" class="ghost">지금 다시 확인</button>
+      <div class="status" id="status" role="status" aria-live="polite">기본정보를 불러오는 중…</div>
+      <div class="inquiry-grid">
+        <section id="calendarSection" class="card calendar-card" hidden aria-label="월별 예약 현황">
+          <div class="calendar-toolbar"><div class="month-nav"><button id="prevMonth" class="ghost" aria-label="이전 달">‹</button><strong id="monthLabel"></strong><button id="nextMonth" class="ghost" aria-label="다음 달">›</button></div><div class="legend" id="legend"></div></div>
+          <p class="cal-hint muted" id="calHint" hidden></p>
+          <div class="cal-head"><div class="sun">일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div class="sat">토</div></div>
+          <div class="cal" id="calendar"></div>
+          <p class="calendar-note">달력은 1박 기준입니다. 날짜를 선택하면 선택한 박수의 객실과 요금을 확인할 수 있습니다.</p>
+        </section>
+        <aside class="card schedule-card" aria-labelledby="scheduleTitle"><h2 id="scheduleTitle">선택한 일정</h2><div class="schedule-date"><svg><use href="#i-calendar"/></svg><strong id="selectedDate">날짜를 선택해 주세요</strong></div><p id="selectedStay" class="muted">달력에서 체크인 날짜를 선택하세요.</p><dl id="selectedDetails"></dl><div class="contact-note"><svg><use href="#i-notice"/></svg><p>예약은 담당자 <strong>김사랑 Pro</strong>에게<br>요청해 주세요.</p></div></aside>
+      </div>
+      <section id="detailSection" class="card" hidden aria-label="객실 조회 결과">
+        <div class="section-title"><h2>객실 조회 결과 <span id="roomCount" class="count-badge"></span></h2><div class="room-tools"><button id="availableOnly" class="filter-toggle" type="button" aria-pressed="false">가능 객실만 보기</button><span class="muted">회원가 기준</span></div></div>
+        <div class="detail-head"><div><strong id="detailTitle"></strong><span class="muted" id="detailFetched"></span></div><button id="refreshDetail" class="ghost">지금 다시 확인</button></div>
+        <div id="buildings" class="chips" hidden></div><div class="room-list-head" aria-hidden="true"><span>객실 정보</span><span>기준 / 최대 인원</span><span>객실 상태</span><span>숙박 요금 · 회원가</span><span>사진</span></div><div id="rooms"></div>
+      </section>
+      <div class="foot" id="foot"><p id="footClosing" hidden><b>잔여객실 적음</b>도 예약이 가능한 상태입니다. 남은 객실이 적다는 뜻입니다.</p><p>이 화면은 조회 전용입니다. 숙소 · 동 · 날짜 · 객실 종류를 담당자에게 알려 예약을 요청해 주세요.</p><p class="muted">금액은 회원가 기준이며, 실제 예약 가능 여부와 요금은 조회 이후 달라질 수 있습니다.</p></div>
     </div>
-    <div id="buildings" class="chips" hidden></div>
-    <div id="rooms"></div>
-  </section>
-
-  <div class="foot" id="foot">
-    <p id="footClosing" hidden><b>마감임박</b>도 예약이 가능한 상태입니다. 남은 객실이 적다는 뜻입니다.</p>
-    <p><b>이 화면에서 예약은 되지 않습니다.</b> 숙소 · 동 · 날짜 · 객실 종류를 <b>담당자 김사랑 Pro</b>에게 알려 예약을 요청해 주세요.</p>
-    <p class="muted">금액은 회원가 기준입니다. 표시된 현황은 조회 시점 기준이며 실제 예약 가능 여부는 달라질 수 있습니다.</p>
-  </div>
+    <section id="noticesPage" class="page-view card board-card" hidden aria-labelledby="noticesTitle">
+      <div class="board-title-row"><div><h2 id="noticesTitle">공지사항</h2><p class="muted board-description">휴양시설 이용과 관련된 중요한 안내사항을 확인해 주세요.</p></div><button id="addNotice" class="primary admin-only" type="button" hidden>등록하기</button></div>
+      <form id="noticeSearch" class="board-search"><label><span class="sr-only">공지 구분</span><select id="noticeCategory"><option value="">전체</option><option>중요</option><option>안내</option><option>이벤트</option></select></label><label class="search-field"><svg><use href="#i-search"/></svg><span class="sr-only">공지 검색어</span><input id="noticeQuery" type="search" placeholder="제목 또는 내용을 검색하세요."></label><button class="primary" type="submit"><svg aria-hidden="true"><use href="#i-search"/></svg>검색</button></form>
+      <div class="table-scroll"><table class="notice-table"><thead><tr><th scope="col">No.</th><th scope="col">구분</th><th scope="col">제목</th><th scope="col">등록일</th></tr></thead><tbody id="noticeRows"></tbody></table></div><div id="noticeEmpty" class="empty-state">등록된 공지사항이 없습니다.<span>휴양시설 이용 방법은 자주 묻는 질문에서 확인해 주세요.</span><a href="#faq">자주 묻는 질문 보기 →</a></div><div class="board-footer"><span id="noticeCount">총 0건</span><nav id="noticePages" aria-label="공지 페이지"></nav></div>
+    </section>
+    <section id="faqPage" class="page-view card board-card" hidden aria-labelledby="faqTitle">
+      <div class="board-title-row"><div><h2 id="faqTitle">자주 묻는 질문</h2><p class="muted board-description">예약부터 객실 정보까지, 이용에 필요한 내용을 안내합니다.</p></div><button id="addFaq" class="primary admin-only" type="button" hidden>질문 추가</button></div>
+      <form id="faqSearch" class="board-search"><label><span class="sr-only">질문 카테고리</span><select id="faqCategory"><option value="">전체</option><option>예약</option><option>결제</option><option>이용</option><option>기타</option></select></label><label class="search-field"><svg><use href="#i-search"/></svg><span class="sr-only">질문 검색어</span><input id="faqQuery" type="search" placeholder="질문 또는 내용을 검색하세요."></label><button class="primary" type="submit"><svg aria-hidden="true"><use href="#i-search"/></svg>검색</button></form>
+      <div id="faqList" class="faq-list"></div><div class="board-footer"><span id="faqCount" role="status"></span><nav id="faqPages" aria-label="질문 페이지"></nav></div>
+    </section>
+    <footer class="portal-footer">ACE nanochem <span>임직원 휴양시설 안내</span></footer>
+  </main>
 </div>
-
-<!-- 사진 확대 -->
-<div id="lightbox" class="lightbox" hidden>
-  <button class="lb-close" id="lbClose" aria-label="닫기">✕</button>
-  <button class="lb-nav lb-prev" id="lbPrev" aria-label="이전">‹</button>
-  <img id="lbImg" alt="">
-  <button class="lb-nav lb-next" id="lbNext" aria-label="다음">›</button>
-  <div class="lb-count" id="lbCount"></div>
-</div>
-
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="객실 사진" hidden><button class="lb-close" id="lbClose" aria-label="닫기">✕</button><button class="lb-nav lb-prev" id="lbPrev" aria-label="이전 사진">‹</button><img id="lbImg" alt="객실 사진"><button class="lb-nav lb-next" id="lbNext" aria-label="다음 사진">›</button><div class="lb-count" id="lbCount"></div></div>
+<dialog id="queryLoading" class="query-loading" aria-labelledby="queryLoadingTitle" aria-describedby="queryLoadingHint">
+  <div class="query-spinner" aria-hidden="true"></div>
+  <h2 id="queryLoadingTitle">예약 가능 현황을 확인하고 있어요</h2>
+  <p id="queryLoadingHint">첫 조회는 준비 시간이 필요해요.<br>잠시만 기다려 주세요.</p>
+  <p id="queryLoadingElapsed" class="query-loading-elapsed" aria-hidden="true">조회 중 · 0초</p>
+</dialog>
+<dialog id="adminLogin" class="admin-dialog"><form id="adminLoginForm" method="dialog"><button class="dialog-close" value="cancel" aria-label="닫기">✕</button><h2>관리자 로그인</h2><p class="muted">공지사항과 자주 묻는 질문을 관리합니다.</p><label>관리자 비밀번호<input id="adminPassword" type="password" autocomplete="current-password" required></label><p id="adminLoginError" class="form-error" role="alert"></p><button class="primary" value="default">로그인</button></form></dialog>
+<dialog id="contentEditor" class="admin-dialog"><form id="contentForm"><button id="contentCancelX" class="dialog-close" type="button" aria-label="닫기">✕</button><h2 id="contentEditorTitle">내용 등록</h2><input id="contentId" type="hidden"><input id="contentKind" type="hidden"><label>구분<select id="contentCategory" required></select></label><label>제목<input id="contentTitle" maxlength="160" required></label><label id="contentDateLabel">등록일<input id="contentDate" type="date"></label><label>내용<textarea id="contentBody" rows="9" maxlength="5000" required placeholder="내용을 입력하세요. 캡처 이미지는 이곳에 Ctrl+V로 붙여넣을 수 있습니다."></textarea><span id="contentPasteHint" class="content-paste-hint">캡처한 이미지는 내용 입력칸에서 Ctrl+V 또는 ⌘V로 계속 붙여넣을 수 있습니다.</span></label><div id="contentImageField" class="content-image-field"><span class="field-title">내용 이미지 <small>붙여넣기 이미지 · 각 4MB 이하</small></span><div id="contentImageList" class="content-image-list"></div><label for="contentAttachment">첨부파일 <span>모든 파일 · 각 10MB 이하</span></label><input id="contentAttachment" type="file" multiple><ul id="contentAttachmentList" class="content-attachment-list"></ul></div><p id="contentError" class="form-error" role="alert"></p><div class="dialog-actions"><button id="contentCancel" type="button">취소</button><button class="primary" type="submit">저장</button></div></form></dialog>
+<script type="module" src="./portal.js"></script>
 <script type="module" src="./app.js"></script>
 </body>
 </html>

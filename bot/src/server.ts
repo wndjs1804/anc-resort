@@ -11,18 +11,26 @@
 
 import crypto from 'node:crypto';
 import http from 'node:http';
+import Holidays from 'date-holidays';
+import { getStorage } from 'firebase-admin/storage';
 
 import { ananttiAdapter } from './adapters/anantti.ts';
 import { hanwhaAdapter } from './adapters/hanwha.ts';
 import { sonoAdapter } from './adapters/sono.ts';
 import { AdapterError, type AdapterErrorCode, type Node, type ResortAdapter, type ResortId } from './adapters/types.ts';
 import { closeAll, getContext, getLoginCount } from './browser.ts';
-import { getChildNodes, getNode, writeDetail, writeSnapshot } from './store.ts';
+import { getChildNodes, getNode, getPortalContent, removePortalContent, savePortalContent, writeDetail, writeSnapshot } from './store.ts';
 
 const PORT = Number(process.env.PORT ?? 8080);
 
 /** 게시판 토큰. Secret Manager 가 BOARD_TOKEN 으로 넣어 준다. */
 const BOARD_TOKEN = process.env.BOARD_TOKEN ?? '';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? '';
+const ADMIN_SESSION_KEY = process.env.SESSION_KEY || BOARD_TOKEN;
+const ADMIN_SESSION_MS = 8 * 60 * 60 * 1000;
+const adminLoginFailures = new Map<string, { count: number; resetAt: number }>();
+const ADMIN_LOGIN_WINDOW_MS = 15 * 60 * 1000;
+const ADMIN_LOGIN_LIMIT = 5;
 
 /** CORS 허용 출처. 쉼표로 여러 개. 비우면 모두 거부한다. */
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS ?? '')
@@ -97,12 +105,37 @@ function authorized(req: http.IncomingMessage): boolean {
   return a.length === b.length && crypto.timingSafeEqual(a, b);
 }
 
+function safeEqual(given: string, expected: string): boolean {
+  const a = Buffer.from(given); const b = Buffer.from(expected);
+  return a.length === b.length && crypto.timingSafeEqual(a, b);
+}
+
+function createAdminSession(): string {
+  const payload = Buffer.from(JSON.stringify({ exp: Date.now() + ADMIN_SESSION_MS })).toString('base64url');
+  const signature = crypto.createHmac('sha256', ADMIN_SESSION_KEY).update(payload).digest('base64url');
+  return `${payload}.${signature}`;
+}
+
+function adminAuthorized(req: http.IncomingMessage): boolean {
+  if (!ADMIN_PASSWORD || !ADMIN_SESSION_KEY) return false;
+  const token = String(req.headers['x-admin-session'] ?? '');
+  const [payload, signature] = token.split('.');
+  if (!payload || !signature) return false;
+  const expected = crypto.createHmac('sha256', ADMIN_SESSION_KEY).update(payload).digest('base64url');
+  if (!safeEqual(signature, expected)) return false;
+  try { return Number(JSON.parse(Buffer.from(payload, 'base64url').toString()).exp) > Date.now(); } catch { return false; }
+}
+
+function adminLoginKey(req: http.IncomingMessage): string {
+  return String(req.headers['x-forwarded-for'] ?? req.socket.remoteAddress ?? 'unknown').split(',')[0].trim();
+}
+
 function corsHeaders(origin: string | undefined): Record<string, string> {
   const allow = origin && ALLOWED_ORIGINS.includes(origin) ? origin : '';
   return allow
     ? {
         'Access-Control-Allow-Origin': allow,
-        'Access-Control-Allow-Headers': 'Authorization, Content-Type',
+        'Access-Control-Allow-Headers': 'Authorization, Content-Type, X-Admin-Session',
         'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
         'Access-Control-Max-Age': '3600',
         Vary: 'Origin',
@@ -116,12 +149,12 @@ function send(res: http.ServerResponse, status: number, body: unknown, headers: 
   res.end(text);
 }
 
-async function readJson(req: http.IncomingMessage): Promise<Record<string, unknown>> {
+async function readJson(req: http.IncomingMessage, maxBytes = 64_000): Promise<Record<string, unknown>> {
   const chunks: Buffer[] = [];
   let size = 0;
   for await (const c of req) {
     size += (c as Buffer).length;
-    if (size > 64_000) throw new AdapterError('parse_failed', '요청이 너무 큽니다.');
+    if (size > maxBytes) throw new AdapterError('parse_failed', '요청이 너무 큽니다.');
     chunks.push(c as Buffer);
   }
   if (!chunks.length) return {};
@@ -130,6 +163,91 @@ async function readJson(req: http.IncomingMessage): Promise<Record<string, unkno
   } catch {
     throw new AdapterError('parse_failed', '요청 본문이 JSON 이 아닙니다.');
   }
+}
+
+const cleanText = (value: unknown, max: number): string => String(value ?? '').trim().slice(0, max);
+const CONTENT_BUCKET = 'anc-resort-rooms';
+const NOTICE_IMAGE_MAX_BYTES = 4 * 1024 * 1024;
+const NOTICE_FILE_MAX_BYTES = 10 * 1024 * 1024;
+const NOTICE_IMAGE_TYPES: Record<string, string> = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' };
+
+async function uploadNoticeImage(id: string, dataUrl: unknown): Promise<{ imageUrl: string; imagePath: string }> {
+  const match = String(dataUrl ?? '').match(/^data:(image\/(?:jpeg|png|webp));base64,([A-Za-z0-9+/=]+)$/);
+  if (!match) throw new AdapterError('parse_failed', '이미지는 PNG, JPG, WebP 형식만 등록할 수 있습니다.');
+  const bytes = Buffer.from(match[2], 'base64');
+  if (!bytes.length || bytes.length > NOTICE_IMAGE_MAX_BYTES) throw new AdapterError('parse_failed', '이미지는 4MB 이하로 등록해 주세요.');
+  const imagePath = `portal/notices/${id}/${crypto.randomUUID()}.${NOTICE_IMAGE_TYPES[match[1]]}`;
+  const token = crypto.randomUUID();
+  await getStorage().bucket(CONTENT_BUCKET).file(imagePath).save(bytes, {
+    resumable: false,
+    contentType: match[1],
+    metadata: { cacheControl: 'public, max-age=31536000', metadata: { firebaseStorageDownloadTokens: token } },
+  });
+  return { imagePath, imageUrl: `https://firebasestorage.googleapis.com/v0/b/${CONTENT_BUCKET}/o/${encodeURIComponent(imagePath)}?alt=media&token=${token}` };
+}
+
+async function deleteNoticeImage(imagePath?: string): Promise<void> {
+  if (!imagePath?.startsWith('portal/notices/')) return;
+  await getStorage().bucket(CONTENT_BUCKET).file(imagePath).delete({ ignoreNotFound: true });
+}
+
+type NoticeFile = { url: string; path: string; name: string; contentType: string; size: number };
+
+async function uploadNoticeFile(body: Record<string, unknown>): Promise<NoticeFile> {
+  const id = cleanText(body.id, 80);
+  if (!/^[a-zA-Z0-9_-]+$/.test(id)) throw new AdapterError('parse_failed', '콘텐츠 ID가 올바르지 않습니다.');
+  const contentType = cleanText(body.contentType, 120) || 'application/octet-stream';
+  const inline = body.usage === 'inline';
+  if (inline && !NOTICE_IMAGE_TYPES[contentType]) throw new AdapterError('parse_failed', '붙여넣기는 PNG, JPG, WebP 이미지만 지원합니다.');
+  const encoded = String(body.data ?? '');
+  if (!/^[A-Za-z0-9+/=]+$/.test(encoded)) throw new AdapterError('parse_failed', '파일 데이터가 올바르지 않습니다.');
+  const bytes = Buffer.from(encoded, 'base64');
+  const limit = inline ? NOTICE_IMAGE_MAX_BYTES : NOTICE_FILE_MAX_BYTES;
+  if (!bytes.length || bytes.length > limit) throw new AdapterError('parse_failed', `파일은 ${limit / 1024 / 1024}MB 이하로 등록해 주세요.`);
+  const originalName = cleanText(body.name, 180) || (inline ? '붙여넣은 이미지.png' : '첨부파일');
+  const sourceExt = originalName.match(/\.([a-zA-Z0-9]{1,10})$/)?.[1].toLowerCase();
+  const ext = inline ? NOTICE_IMAGE_TYPES[contentType] : sourceExt || 'bin';
+  const path = `portal/notices/${id}/${crypto.randomUUID()}.${ext}`;
+  const token = crypto.randomUUID();
+  await getStorage().bucket(CONTENT_BUCKET).file(path).save(bytes, {
+    resumable: false, contentType,
+    metadata: { cacheControl: 'private, max-age=3600', contentDisposition: `${inline ? 'inline' : 'attachment'}; filename="${originalName.replace(/["\\]/g, '_')}"`, metadata: { firebaseStorageDownloadTokens: token } },
+  });
+  return { path, name: originalName, contentType, size: bytes.length, url: `https://firebasestorage.googleapis.com/v0/b/${CONTENT_BUCKET}/o/${encodeURIComponent(path)}?alt=media&token=${token}` };
+}
+
+function noticeFiles(value: unknown, id: string): NoticeFile[] {
+  if (!Array.isArray(value)) return [];
+  return value.flatMap((entry) => {
+    const item = entry as Partial<NoticeFile>;
+    if (!item.path?.startsWith(`portal/notices/${id}/`) || !String(item.url).startsWith(`https://firebasestorage.googleapis.com/v0/b/${CONTENT_BUCKET}/o/`)) return [];
+    return [{ url: String(item.url), path: item.path, name: cleanText(item.name, 180), contentType: cleanText(item.contentType, 120), size: Number(item.size) || 0 }];
+  });
+}
+
+async function handleContentWrite(body: Record<string, unknown>): Promise<unknown> {
+  const action = body.action === 'delete' ? 'delete' : 'save';
+  const kind = body.kind === 'notice' ? 'notice' : body.kind === 'faq' ? 'faq' : null;
+  const id = cleanText(body.id, 80);
+  if (!kind || !/^[a-zA-Z0-9_-]+$/.test(id)) throw new AdapterError('parse_failed', '콘텐츠 ID가 올바르지 않습니다.');
+  const current = (await getPortalContent()).find((item) => item.id === id);
+  if (action === 'delete') {
+    await removePortalContent(id, kind);
+    if (kind === 'notice') await Promise.all([current?.imagePath, ...(current?.inlineImages ?? []).map((x) => x.path), ...(current?.attachments ?? []).map((x) => x.path)].map(deleteNoticeImage));
+    return { ok: true };
+  }
+  const title = cleanText(body.title, 160); const content = cleanText(body.body, 5000);
+  const category = cleanText(body.category, 20);
+  if (!title || !content || !category) throw new AdapterError('parse_failed', '구분, 제목, 내용을 모두 입력해 주세요.');
+  const date = kind === 'notice' ? cleanText(body.date, 10) : '';
+  if (kind === 'notice' && !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new AdapterError('parse_failed', '등록일을 확인해 주세요.');
+  const inlineImages = kind === 'notice' ? noticeFiles(body.inlineImages, id).map(({ url, path, name }) => ({ url, path, name })) : [];
+  const attachments = kind === 'notice' ? noticeFiles(body.attachments, id) : [];
+  const keptPaths = new Set([...inlineImages, ...attachments].map((x) => x.path));
+  const oldPaths = [current?.imagePath, ...(current?.inlineImages ?? []).map((x) => x.path), ...(current?.attachments ?? []).map((x) => x.path)].filter((x): x is string => Boolean(x));
+  await savePortalContent({ id, kind, category, title, body: content, ...(date ? { date } : {}), ...(kind === 'notice' ? { inlineImages, attachments } : {}) });
+  await Promise.all(oldPaths.filter((path) => !keptPaths.has(path)).map(deleteNoticeImage));
+  return { ok: true };
 }
 
 /** 조회 대상 노드를 찾아 검증한다. */
@@ -237,6 +355,23 @@ async function handleHealth(): Promise<unknown> {
   };
 }
 
+function handleHolidays(year: number): unknown {
+  if (!Number.isInteger(year) || year < 2020 || year > 2100) throw new AdapterError('parse_failed', '연도가 올바르지 않습니다.');
+  const calendar = new Holidays('KR');
+  const days = new Map<string, string>();
+  const add = (date: string, name: string) => days.set(date, days.has(date) ? `${days.get(date)} · ${name}` : name);
+  for (const holiday of calendar.getHolidays(year).filter((item) => item.type === 'public')) {
+    const date = holiday.date.slice(0, 10); add(date, holiday.name);
+    if (holiday.name === '설날' || holiday.name === '추석') {
+      const center = new Date(`${date}T12:00:00Z`);
+      for (const [offset, suffix] of [[-1, '연휴'], [1, '연휴']] as const) {
+        const next = new Date(center); next.setUTCDate(next.getUTCDate() + offset); add(next.toISOString().slice(0, 10), `${holiday.name} ${suffix}`);
+      }
+    }
+  }
+  return { year, days: Object.fromEntries([...days].sort(([a], [b]) => a.localeCompare(b))) };
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 
 const server = http.createServer((req, res) => {
@@ -254,6 +389,48 @@ const server = http.createServer((req, res) => {
     try {
       if (req.method === 'GET' && path === '/health') {
         send(res, 200, await handleHealth(), cors);
+        return;
+      }
+
+      if (req.method === 'GET' && path === '/content') {
+        if (!authorized(req)) { send(res, 401, { error: 'unauthorized' }, cors); return; }
+        send(res, 200, { items: await getPortalContent() }, cors);
+        return;
+      }
+
+      if (req.method === 'GET' && path === '/holidays') {
+        if (!authorized(req)) { send(res, 401, { error: 'unauthorized' }, cors); return; }
+        const year = Number(new URL(req.url ?? '/', 'http://localhost').searchParams.get('year'));
+        send(res, 200, handleHolidays(year), cors);
+        return;
+      }
+
+      if (req.method === 'POST' && path === '/admin/login') {
+        if (!authorized(req)) { send(res, 401, { error: 'unauthorized' }, cors); return; }
+        const key = adminLoginKey(req); const now = Date.now(); const failure = adminLoginFailures.get(key);
+        if (failure && failure.resetAt > now && failure.count >= ADMIN_LOGIN_LIMIT) {
+          send(res, 429, { error: 'too_many_attempts' }, cors); return;
+        }
+        const body = await readJson(req);
+        if (!ADMIN_PASSWORD || !safeEqual(String(body.password ?? ''), ADMIN_PASSWORD)) {
+          const current = failure && failure.resetAt > now ? failure : { count: 0, resetAt: now + ADMIN_LOGIN_WINDOW_MS };
+          current.count++; adminLoginFailures.set(key, current);
+          send(res, 401, { error: 'invalid_password' }, cors); return;
+        }
+        adminLoginFailures.delete(key);
+        send(res, 200, { session: createAdminSession(), expiresIn: ADMIN_SESSION_MS / 1000 }, cors);
+        return;
+      }
+
+      if (req.method === 'POST' && path === '/admin/content') {
+        if (!authorized(req) || !adminAuthorized(req)) { send(res, 401, { error: 'admin_unauthorized' }, cors); return; }
+        send(res, 200, await handleContentWrite(await readJson(req, 5_700_000)), cors);
+        return;
+      }
+
+      if (req.method === 'POST' && path === '/admin/upload') {
+        if (!authorized(req) || !adminAuthorized(req)) { send(res, 401, { error: 'admin_unauthorized' }, cors); return; }
+        send(res, 200, await uploadNoticeFile(await readJson(req, 14_200_000)), cors);
         return;
       }
 
@@ -286,6 +463,7 @@ server.listen(PORT, () => {
   console.log(`anc-resort-bot listening on ${PORT}`);
   console.log(`  허용 출처: ${ALLOWED_ORIGINS.join(', ') || '(없음 — CORS 전부 거부)'}`);
   console.log(`  토큰: ${BOARD_TOKEN ? '설정됨' : '없음 — 조회 요청이 모두 401 이 됩니다'}`);
+  console.log(`  관리자 인증: ${ADMIN_PASSWORD ? '설정됨' : '없음'}`);
 });
 
 for (const sig of ['SIGINT', 'SIGTERM'] as const) {

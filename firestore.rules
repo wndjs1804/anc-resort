@@ -23,7 +23,8 @@ service cloud.firestore {
     match /snapshots/{docId}    { allow read: if true; allow write: if false; }
     match /details/{docId}      { allow read: if true; allow write: if false; }
 
-    // sessions/ · meta/ 는 위 기본 규칙에 따라 읽기·쓰기 모두 금지된다.
+    // sessions/ · meta/ · portalContent/ 는 위 기본 규칙에 따라 읽기·쓰기 모두 금지된다.
+    // portalContent/ 조회·변경은 관리자 세션을 검증하는 Cloud Run Admin SDK만 수행한다.
     // (규칙을 추가하지 않는 것이 곧 금지다. 실수로 열지 않도록 여기 적어 둔다.)
   }
 }

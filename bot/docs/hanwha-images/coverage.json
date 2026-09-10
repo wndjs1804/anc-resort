@@ -1,0 +1,114 @@
+[
+  {
+    "locCd": "0101",
+    "name": "설악 쏘라노",
+    "cachedRooms": 15,
+    "matched": 15,
+    "missing": []
+  },
+  {
+    "locCd": "0102",
+    "name": "설악 별관",
+    "cachedRooms": 0,
+    "matched": 0,
+    "missing": []
+  },
+  {
+    "locCd": "0401",
+    "name": "용인",
+    "cachedRooms": 0,
+    "matched": 0,
+    "missing": []
+  },
+  {
+    "locCd": "0701",
+    "name": "산정호수",
+    "cachedRooms": 0,
+    "matched": 0,
+    "missing": []
+  },
+  {
+    "locCd": "0801",
+    "name": "해운대",
+    "cachedRooms": 0,
+    "matched": 0,
+    "missing": []
+  },
+  {
+    "locCd": "0901",
+    "name": "대천",
+    "cachedRooms": 0,
+    "matched": 0,
+    "missing": []
+  },
+  {
+    "locCd": "1001",
+    "name": "경주 에톤",
+    "cachedRooms": 3,
+    "matched": 3,
+    "missing": []
+  },
+  {
+    "locCd": "1002",
+    "name": "경주 담톤",
+    "cachedRooms": 10,
+    "matched": 10,
+    "missing": []
+  },
+  {
+    "locCd": "1101",
+    "name": "제주",
+    "cachedRooms": 0,
+    "matched": 0,
+    "missing": []
+  },
+  {
+    "locCd": "1601",
+    "name": "평창",
+    "cachedRooms": 0,
+    "matched": 0,
+    "missing": []
+  },
+  {
+    "locCd": "2101",
+    "name": "거제 벨버디어",
+    "cachedRooms": 16,
+    "matched": 16,
+    "missing": []
+  },
+  {
+    "locCd": "2102",
+    "name": "거제 르 씨엘",
+    "cachedRooms": 6,
+    "matched": 6,
+    "missing": []
+  },
+  {
+    "locCd": "2201",
+    "name": "여수 벨메르",
+    "cachedRooms": 13,
+    "matched": 13,
+    "missing": []
+  },
+  {
+    "locCd": "2401",
+    "name": "브리드호텔 양양",
+    "cachedRooms": 0,
+    "matched": 0,
+    "missing": []
+  },
+  {
+    "locCd": "2601",
+    "name": "마티에 오시리아",
+    "cachedRooms": 0,
+    "matched": 0,
+    "missing": []
+  },
+  {
+    "locCd": "3901",
+    "name": "더플라자",
+    "cachedRooms": 0,
+    "matched": 0,
+    "missing": []
+  }
+]

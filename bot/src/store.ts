@@ -115,3 +115,31 @@ export async function getNode(nodeId: string): Promise<NodeDoc | null> {
   const snap = await getDb().collection('nodes').doc(nodeId).get();
   return snap.exists ? ({ id: snap.id, ...snap.data() } as NodeDoc) : null;
 }
+
+export type PortalContentDoc = {
+  id: string;
+  kind: 'notice' | 'faq';
+  category?: string;
+  title?: string;
+  body?: string;
+  date?: string;
+  imageUrl?: string;
+  imagePath?: string;
+  inlineImages?: Array<{ url: string; path: string; name: string }>;
+  attachments?: Array<{ url: string; path: string; name: string; contentType: string; size: number }>;
+  deleted?: boolean;
+};
+
+export async function getPortalContent(): Promise<PortalContentDoc[]> {
+  const snap = await getDb().collection('portalContent').get();
+  return snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }) as PortalContentDoc);
+}
+
+export async function savePortalContent(item: PortalContentDoc): Promise<void> {
+  const { id, ...data } = item;
+  await getDb().collection('portalContent').doc(id).set({ ...data, deleted: false, updatedAt: new Date() });
+}
+
+export async function removePortalContent(id: string, kind: 'notice' | 'faq'): Promise<void> {
+  await getDb().collection('portalContent').doc(id).set({ kind, deleted: true, updatedAt: new Date() });
+}
